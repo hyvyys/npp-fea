@@ -1,8 +1,8 @@
 # npp-fea
 Notepad++ highlighting scheme for OpenType feature syntax (.fea)
 
-## Features
-Highlights AFDKO keywords, language tags (you won't ever mix up DFLT and dflt again), glyph classes.
+Highlights glyph classes, AFDKO keywords, and language tags (so you won't ever mix up DFLT and dflt again).
+
 ![](https://raw.githubusercontent.com/hyvyys/npp-fea/master/example.png)
 
 ## References
