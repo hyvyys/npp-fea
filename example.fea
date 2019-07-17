@@ -1,0 +1,33 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn CAT;
+languagesystem latn NLD;
+
+# Uppercase
+@A_accents = [ A Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni01CD uni0200 uni0202 uni0226 uni1E00 uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni01DE Aringacute uni1EAE uni1EB0 uni1EB2 uni1EB4 uni01E0 uni1EAC uni1EB6 ];
+@cap_swsh_bottom_right = [ @K_desc @K_swsh Q.swsh Q.swsh @R_desc @R_swsh ];
+			
+feature locl {
+script latn ;
+  language CAT exclude_dflt;
+	lookup punt_volat {
+		sub l periodcentered' l by periodcentered.CAT;
+		sub L periodcentered' L by periodcentered.CAT.cap;
+	} punt_volat;
+} locl;
+
+lookup calt_uhorn {
+	lookupflag IgnoreMarks;
+	@viet_serif_xheight = [ i j m n p r t t.long t.longer u y @UC_serif_tl_c2pc ];
+	ignore sub [ @uhorn_ @Uhorn_c2pc ]' @uhorn_accomodate;
+	sub [ @uhorn_ ]' [ @viet_serif_xheight ] by [ @uhorn_calt ];
+}
+
+feature kern {
+	pos seven @hyphenlike -30;
+	pos @hyphenlike seven -60;
+	
+	pos @lc_caron_right_above @lc_accomodate_caron_ 100 -100;
+
+	pos @spaces' 100 @cap_init_overhanging;
+}
