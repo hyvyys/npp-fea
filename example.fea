@@ -8,7 +8,7 @@ languagesystem latn NLD;
 @cap_swsh_bottom_right = [ @K_desc @K_swsh Q.swsh Q.swsh @R_desc @R_swsh ];
 			
 feature locl {
-script latn ;
+script latn;
   language CAT exclude_dflt;
 	lookup punt_volat {
 		sub l periodcentered' l by periodcentered.CAT;
